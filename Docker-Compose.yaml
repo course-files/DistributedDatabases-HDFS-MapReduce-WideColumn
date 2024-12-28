@@ -1,0 +1,24 @@
+services:
+
+  mysql-8.0.40:
+    # image: customized-mysql:1.0
+    image: mysql:8.0.40
+    hostname: mysql-8.0.40-lab2
+    container_name: mysql-8.0.40-lab2
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 5trathm0re
+    volumes:
+      # To store the server's configuration file in the host
+      - ./container-volumes/mysql/etc-mysql/my.cnf:/etc/mysql/my.cnf
+      # To store the server's data persistently in the host
+      - ./container-volumes/mysql/var-lib-mysql:/var/lib/mysql
+      # To run the SQL scripts used to create the required databases
+      - ./container-volumes/mysql/init-scripts:/docker-entrypoint-initdb.d/
+    command: >
+      /bin/bash -c "
+      chmod 644 /etc/mysql/my.cnf &&
+      exec docker-entrypoint.sh mysqld
+      "

@@ -1,0 +1,11 @@
+# Custom Dictionary Words
+classicmodels
+Distrib
+dreamhome
+genpkey
+InnoDB
+orderdetails
+phpmyadmin
+privkey
+SAVEPOINT
+varchar
