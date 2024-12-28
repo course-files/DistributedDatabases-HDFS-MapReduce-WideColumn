@@ -1,11 +1,12 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: Issue Reporting Template
+about: Please use this template to report an issue.
 title: ''
-labels: ''
-assignees: ''
+labels: 'bug'
+assignees: 'course-files'
 
 ---
+
 
 **1. Issue Title**
 
