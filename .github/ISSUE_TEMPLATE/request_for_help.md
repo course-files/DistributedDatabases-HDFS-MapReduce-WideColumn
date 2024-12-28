@@ -1,12 +1,3 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
----
-
 **1. Issue Title**
 
 * A good title should include the key components of the issue, such as the error code, the affected system, and the action causing it.
