@@ -1,4 +1,4 @@
-# HBase on Hadoop HDFS and MapReduce
+# Hadoop Setup in a Fully Distributed Mode
 
 ## 1. Build the Images
 
