@@ -40,10 +40,10 @@ Instruction files:
 
 Please refer to the "Lab Manual on Hadoop" for further instructions.
 
-## Lecture Slides
+## Lecture Notes
 
 Please refer to the "Lecture Notes on Distributed Databases" for the theoretical explanation.
 
 ## Technology Stack
 
-_Apache®️, Apache Kafka, Kafka, the Kafka logo and other trademarks or logos are registered trademarks or logos. No endorsement by The Apache Software Foundation or other organizations is implied by the use of these trademarks or logos. This is meant for educational purposes only._
+_Apache®, Apache Kafka, Kafka, the Kafka logo and other trademarks or logos are registered trademarks or logos. No endorsement by The Apache Software Foundation or other organizations is implied by the use of these trademarks or logos. This is meant for educational purposes only._
