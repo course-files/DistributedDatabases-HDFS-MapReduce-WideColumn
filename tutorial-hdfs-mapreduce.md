@@ -238,7 +238,7 @@ Streaming in Hadoop refers to a mechanism that allows you to write MapReduce job
 sudo apt-get update
 sudo apt-get install -y python3 python3-pip
 
-#Verify the Python isntallation
+#Verify the Python installation
 python3 --version
 ```
 

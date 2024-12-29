@@ -352,6 +352,7 @@ rmdir ${HBASE_HOME}/hbase-${HBASE_VERSION}
 
 rm /tmp/hbase-${HBASE_VERSION}-bin.tar.gz
 ls -l $HBASE_HOME
+```
 
 ## 5. Customize the Hadoop Config Files (in the `hadoop-master` node)
 
@@ -444,7 +445,7 @@ nano $HADOOP_HOME/etc/hadoop/mapred-site.xml
 ```
 
 ```shell
-nano $HBASE_HOME/conf/hbase-site.xml
+sudo nano $HBASE_HOME/conf/hbase-site.xml
 ```
 
 Remove the existing content and paste the following:
@@ -508,6 +509,14 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 ## 6. Copy the configuration files from the master node to all the other nodes
 
 ```shell
+sudo mkdir $HADOOP_HOME
+sudo mkdir $HBASE_HOME
+
+sudo chown -R hadoop:hadoop $HADOOP_HOME
+sudo chown -R hadoop:hadoop $HBASE_HOME
+```
+
+```shell
 scp -r $HADOOP_HOME hadoop@hadoop-slave-1:$HADOOP_HOME
 scp -r $HBASE_HOME hadoop@hadoop-slave-1:$HBASE_HOME
 
@@ -537,9 +546,6 @@ echo "export HADOOP_OPTS=-Djava.library.path=$HADOOP_HOME/lib/native" >> ${HADOO
 export HADOOP_OPTS="$HADOOP_OPTS --add-opens=java.base/java.lang=ALL-UNNAMED"
 export HADOOP_OPTS="$HADOOP_OPTS --add-opens=java.base/java.lang.reflect=ALL-UNNAMED"
 export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
-
-sudo chown -R hadoop:hadoop /usr/local/hadoop
-sudo chown -R hadoop:hadoop /usr/local/hbase
 ```
 
 ## 7. Configure the Hadoop and HBase Master Files and Slave Files
@@ -566,7 +572,7 @@ hadoop-slave-2
 
 ```shell
 sudo su
-sudo apt-get install gnupg
+sudo apt install -y gnupg
 
 # Add the Eclipse Adoptium GPG key
 wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | sudo apt-key add -
