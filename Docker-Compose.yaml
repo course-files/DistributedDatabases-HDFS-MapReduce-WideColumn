@@ -1,6 +1,5 @@
 services:
 
-# Source: https://blueskyareahm.medium.com/try-hbase-shell-with-docker-image-6547d93df4be
   hbase-master:
     image: blueskyareahm/hbase-base:2.1.3
     container_name: hbase-master
