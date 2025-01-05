@@ -1,8 +1,8 @@
 # Column-Family Stores: Hadoop (HDFS and MapReduce) and HBase
 
-Course files (instructional materials) for the **MIT8107: Advanced Database Systems** and the **BBT4206: Business Intelligence II** courses.
+Course files (instructional materials) for various database systems related courses.
 
-**Concept:** Distributed Database Management Systems - Setting up Hadoop in a fully distributed mode and using Hadoop Distributed File System (HDFS) and MapReduce (in Java and Python).
+Concepts: Distributed Database Management Systems and Non-Relational Data Models - Setting up Hadoop in a fully distributed mode, using Hadoop Distributed File System (HDFS) and MapReduce (in Java and Python), and using a non-relational column-family store database (HBase).
 
 | **Key**                                                               | Value                                                                                                                                                                              |
 |---------------|---------------------------------------------------------|
@@ -23,7 +23,7 @@ Bibtex:
     copyright = {GPL-3.0},
     shorttitle = {Hadoop},
     url = {https://github.com/course-files/MIT8107-Lab4-Column-Family-Stores},
-    abstract = {Course files (instructional materials) for the MIT8107: Advanced Database Systems and the BBT4206: Business Intelligence II courses. Concept: Distributed Database Management Systems - Setting up Hadoop in a fully distributed mode and using Hadoop Distributed File System (HDFS) and MapReduce (in Java and Python).},
+    abstract = {Course files (instructional materials) for various database systems related courses.  Concepts: Distributed Database Management Systems and Non-Relational Data Models - Setting up Hadoop in a fully distributed mode, using Hadoop Distributed File System (HDFS) and MapReduce (in Java and Python), and using a non-relational column-family store database (HBase).},
     urldate = {2024-12-28},
     author = {Omondi, Allan Odhiambo},
     month = dec,
