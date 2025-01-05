@@ -16,12 +16,11 @@ Concepts: Distributed Database Management Systems and Non-Relational Data Models
 Bibtex:
 
 ```bibtex
-
 @misc{omondi_mit8107-lab4-column-family-stores_2024,
     address = {Nairobi, Kenya},
     title = {{MIT8107}-{Lab4}-{Column}-{Family}-{Stores}},
     copyright = {GPL-3.0},
-    shorttitle = {Hadoop},
+    shorttitle = {Column-{Family}-{Stores}},
     url = {https://github.com/course-files/MIT8107-Lab4-Column-Family-Stores},
     abstract = {Course files (instructional materials) for various database systems related courses.  Concepts: Distributed Database Management Systems and Non-Relational Data Models - Setting up Hadoop in a fully distributed mode, using Hadoop Distributed File System (HDFS) and MapReduce (in Java and Python), and using a non-relational column-family store database (HBase).},
     urldate = {2024-12-28},
