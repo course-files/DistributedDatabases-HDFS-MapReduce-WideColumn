@@ -35,8 +35,9 @@ keywords = {query-optimization, query-processing},
 
 Instruction files:
 
-1. [Hadoop Setup in a Fully Distributed Mode](setup-hadoop.md)
-2. [Tutorial on HDFS and MapReduce in Java and Python](tutorial-hdfs-mapreduce.md)
+1. [Hadoop Setup in a Fully Distributed Mode](instructions/1-hadoop-hdfs-mapreduce/1-setup-hadoop.md)
+2. [Instructions on HDFS and MapReduce in Java and Python](instructions/1-hadoop-hdfs-mapreduce/2-hdfs-mapreduce.md)
+3. [Instructions on HBase (Standalone Mode)](instructions/2-hbase/hbase-standalone.md)
 
 Please refer to the "Lab Manual on Hadoop" for further instructions.
 

@@ -461,7 +461,7 @@ Remove the existing content and paste the following:
    </property>
    <property>
       <name>hbase.zookeeper.quorum</name>
-      <value>zookeeper</value>
+      <value>zookeeper:2181</value>
    </property>
    <property>
       <name>hbase.zookeeper.property.dataDir</name>
@@ -485,7 +485,7 @@ Remove the existing content and paste the following:
    </property>
    <property>
       <name>hbase.zookeeper.quorum</name>
-      <value>zookeeper</value>
+      <value>zookeeper:2181</value>
    </property>
    <property>
       <name>zookeeper.session.timeout</name>

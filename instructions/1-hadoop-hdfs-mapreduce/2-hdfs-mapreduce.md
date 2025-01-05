@@ -1,4 +1,4 @@
-# **Tutorial on HDFS and MapReduce in Java and Python**
+# **Instructions on HDFS and MapReduce in Java and Python**
 
 ## Store Data in Hadoop
 
