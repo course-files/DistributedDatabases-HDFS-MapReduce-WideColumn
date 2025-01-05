@@ -45,7 +45,7 @@ Instruction files:
 
 ## Lecture Notes
 
-Please refer to the "Lecture Notes on Distributed Databases" for more details.
+Please refer to the "Lecture Notes on Non-Relational Models" for more details.
 
 ## Technology Stack
 
