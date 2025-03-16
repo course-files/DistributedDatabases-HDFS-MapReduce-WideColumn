@@ -39,7 +39,7 @@ source ~/.bashrc
 ```
 
 ```shell
-# Verify the IP address for each of the 4 servers
+# Verify the IP address
 ip addr show
 
 # Verify the current hostname
@@ -48,7 +48,8 @@ cat /etc/hostname
 # Edit the hosts file
 nano /etc/hosts
 
-# Append the following lines to the /etc/hosts file (use the verified IP addresses for each)
+# Append the following lines to the /etc/hosts file (these correspond to the IP
+# addresses of the additional nodes in the cluster)
 172.17.0.2 zookeeper
 172.17.0.3 hadoop-master 
 172.17.0.4 hadoop-slave-1 
@@ -71,13 +72,14 @@ echo "hadoop ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
 
 ```shell
 sudo su
-# Make the directories in /usr/local/ that will store the Hadoop and HBase installations
+# Make the directories in /usr/local/ that will store the Hadoop and HBase
+# configurations
 mkdir $ZOOKEEPER_HOME
 sudo chown -R hadoop:hadoop /usr/local/zookeeper
 chmod -R u+rwx /usr/local/zookeeper
 ```
 
-* Then install Java  and proceed to the next step below (_cf._ Step 8)
+* Then install Java first (_cf._ Step 8) and then proceed to the next step below
 
 ### Create and run 1 Hadoop Master and 2 Hadoop Slave Nodes
 
@@ -117,7 +119,7 @@ docker attach hadoop-slave-1
 
 ## 2. Generate SSH Keys and Setup Passwordless SSH
 
-NOTE: This is not necessary for the Zookeper node
+**NOTE:** This is not necessary for the Zookeper node
 
 ```shell
 # Verify the IP address for each of the 4 servers
@@ -153,15 +155,6 @@ echo "hadoop ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
 ```
 
 ```shell
-sudo su
-# Make the directories in /usr/local/ that will store the Hadoop and HBase installations
-mkdir $HADOOP_HOME
-mkdir $HBASE_HOME
-sudo chown -R hadoop:hadoop /usr/local/hadoop
-sudo chown -R hadoop:hadoop /usr/local/hbase
-```
-
-```shell
 # Add environment paths for Hadoop
 sudo su
 cat >> /etc/environment << EOL
@@ -181,7 +174,7 @@ PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 PATH=$PATH:/usr/local/hadoop/bin
 HADOOP_INSTALL=$HADOOP_HOME
 
-HBASE_VERSION=2.5.10
+HBASE_VERSION=2.5.11
 HBASE_HOME=/usr/local/hbase
 
 CLASSPATH=$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/yarn/lib/*
@@ -206,7 +199,7 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin 
 export HADOOP_INSTALL=$HADOOP_HOME 
 
-export HBASE_VERSION=2.5.10
+export HBASE_VERSION=2.5.11
 export HBASE_HOME=/usr/local/hbase
 
 export CLASSPATH=$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/yarn/lib/*
@@ -214,6 +207,15 @@ export CLASSPATH=$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/co
 export HADOOP_CLASSPATH=$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/yarn/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*
 
 source ~/.bashrc
+```
+
+```shell
+sudo su
+# Make the directories in /usr/local/ that will store the Hadoop and HBase installations
+mkdir $HADOOP_HOME
+mkdir $HBASE_HOME
+sudo chown -R hadoop:hadoop /usr/local/hadoop
+sudo chown -R hadoop:hadoop /usr/local/hbase
 ```
 
 ### Setup Passwordless SSH (on each Hadoop server - not necessary on Zookeeper)
@@ -229,6 +231,8 @@ nano /etc/ssh/sshd_config
 
 # Change to:
 #PermitRootLogin Yes
+
+# Save and close the sshd_config file
 
 # Restart the SSH Service
 service ssh restart
@@ -361,7 +365,7 @@ su hadoop
 nano $HADOOP_HOME/etc/hadoop/core-site.xml
 ```
 
-Paste the following:
+Paste the following in the configuration tag:
 
 ```xml
    <property>
@@ -546,6 +550,7 @@ echo "export HADOOP_OPTS=-Djava.library.path=$HADOOP_HOME/lib/native" >> ${HADOO
 export HADOOP_OPTS="$HADOOP_OPTS --add-opens=java.base/java.lang=ALL-UNNAMED"
 export HADOOP_OPTS="$HADOOP_OPTS --add-opens=java.base/java.lang.reflect=ALL-UNNAMED"
 export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
+source ~/.bashrc
 ```
 
 ## 7. Configure the Hadoop and HBase Master Files and Slave Files
@@ -616,7 +621,6 @@ java -version
 
 ```shell
 sudo su
-# Set the JAVA_HOME and JRE_HOME variables
 cat >> /etc/environment << EOL
 HDFS_DATANODE_USER=hadoop
 HDFS_NAMENODE_USER=hadoop
