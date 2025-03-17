@@ -18,4 +18,6 @@ Also refer to the instruction files below for more details:
 
 ## Technology Stack and Process Flow
 
+![image](https://github.com/user-attachments/assets/a9c53e7d-50f4-4a1f-9bda-68bca96252f7)
+
 _Apache® and other trademarks or logos are registered trademarks or logos. No endorsement by The Apache Software Foundation or other organizations is implied by the use of these trademarks or logos. This is meant for educational purposes only._
