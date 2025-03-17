@@ -1,4 +1,4 @@
-# Lab: Hadoop Distributed File System, MapReduce, and Wide-Column Data Models
+# Lab on Distributed Databases: Hadoop Distributed File System, MapReduce, and Wide-Column Data Models
 
 | **Attribute**                                                               | Value                                                                                                                                                                              |
 |---------------|---------------------------------------------------------|
