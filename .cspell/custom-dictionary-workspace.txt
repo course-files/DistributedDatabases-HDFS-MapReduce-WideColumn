@@ -1,9 +1,0 @@
-# Custom Dictionary Words
-HDFS
-nakuru
-Odhiambo
-Omondi
-Passwordless
-Regionserver
-Strathmore
-Zookeper
