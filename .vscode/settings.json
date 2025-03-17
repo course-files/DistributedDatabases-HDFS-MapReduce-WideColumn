@@ -7,7 +7,7 @@
     "cSpell.customDictionaries": {
         "custom-dictionary-workspace": {
             "name": "custom-dictionary-workspace",
-            "path": "${workspaceFolder:MIT8107-Lab4-Column-Family-Stores}/.cspell/custom-dictionary-workspace.txt",
+            "path": "${workspaceFolder}/.cspell/custom-dictionary-workspace.txt",
             "addWords": true,
             "scope": "workspace"
         }

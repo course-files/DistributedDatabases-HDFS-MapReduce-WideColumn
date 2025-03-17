@@ -3,4 +3,7 @@ HDFS
 nakuru
 Odhiambo
 Omondi
+Passwordless
+Regionserver
 Strathmore
+Zookeper
