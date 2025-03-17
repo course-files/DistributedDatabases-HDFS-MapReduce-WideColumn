@@ -4,7 +4,7 @@
 |---------------|---------------------------------------------------------|
 | **Group Name**                                                          | ?                                                                                                                                                                       |
 | **Semester Duration**                                                           | 6<sup>th</sup> January - 12<sup>th</sup> April 2025                                                                                                                                                      |
-| **Recommended Citation** ([Bibtex](BibTex.bib)) | Omondi, A. O. (2025). _Lab Manual on Hadoop Distributed File System, MapReduce, and Wide Column Data Models_ (Version 1.0) [Source Code]. [https://github.com/course-files/DistributedDatabases-HDFS-MapReduce-WideColumn](https://github.com/course-files/DistributedDatabases-HDFS-MapReduce-WideColumn)  |
+| **Recommended Citation** ([Bibtex](BibTex.bib)) | Omondi, A. O. (2025). _Lab Manual on Distributed Databases: Hadoop Distributed File System, MapReduce, and Wide Column Data Models_ (Version 1.0) [Source Code]. [https://github.com/course-files/DistributedDatabases-HDFS-MapReduce-WideColumn](https://github.com/course-files/DistributedDatabases-HDFS-MapReduce-WideColumn)  |
 
 ## Lab Manual and Instruction Files
 
