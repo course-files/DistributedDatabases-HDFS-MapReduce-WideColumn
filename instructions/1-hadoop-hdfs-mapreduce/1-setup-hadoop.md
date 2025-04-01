@@ -230,7 +230,7 @@ nano /etc/ssh/sshd_config
 #PermitRootLogin prohibit-password
 
 # Change to:
-#PermitRootLogin Yes
+PermitRootLogin Yes
 
 # Save and close the sshd_config file
 
@@ -307,8 +307,6 @@ initLimit=10
 # sending a request and getting an acknowledgement
 syncLimit=5
 # the directory where the snapshot is stored.
-# do not use /tmp for storage, /tmp here is just
-# example sakes.
 dataDir=/usr/local/zookeeper/data
 # the port at which the clients will connect
 clientPort=2181

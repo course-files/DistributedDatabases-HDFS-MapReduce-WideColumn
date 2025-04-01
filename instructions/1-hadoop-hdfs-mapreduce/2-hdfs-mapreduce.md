@@ -22,7 +22,7 @@ $HADOOP_HOME/bin/hdfs dfs -put ~/file.txt /usr/local/hadoop/input-test
 $HADOOP_HOME/bin/hdfs dfs -ls /usr/local/hadoop/input-test
 ```
 
-You should also be able to see the file using the Web-UI: [http://localhost:9870/explorer.html#/](http://localhost:9870/explorer.html#/)
+You should also be able to see the file using the Web-UI: [http://localhost:9870/explorer.html#/usr/local/hadoop](http://localhost:9870/explorer.html#/usr/local/hadoop)
 
 ## Retrieve Data from Hadoop
 
