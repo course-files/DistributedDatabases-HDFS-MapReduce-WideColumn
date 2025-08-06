@@ -1,6 +1,5 @@
 {
     "recommendations": [
-        "ms-azuretools.vscode-docker",
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker",
         "ms-vscode-remote.remote-wsl"
