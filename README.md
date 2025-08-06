@@ -1,16 +1,17 @@
 # Lab on Distributed Databases: Hadoop Distributed File System, MapReduce, and Wide-Column Data Models
 
-| **Attribute**                                                               | Value                                                                                                                                                                              |
-|---------------|---------------------------------------------------------|
-| **Group Name**                                                          | ?                                                                                                                                                                       |
-| **Semester Duration**                                                           | 6<sup>th</sup> January - 12<sup>th</sup> April 2025                                                                                                                                                      |
-| **Recommended Citation** ([Bibtex](BibTex.bib)) | Omondi, A. O. (2025). _Lab Manual on Distributed Databases: Hadoop Distributed File System, MapReduce, and Wide Column Data Models_ (Version 1.0) [Source Code]. [https://github.com/course-files/DistributedDatabases-HDFS-MapReduce-WideColumn](https://github.com/course-files/DistributedDatabases-HDFS-MapReduce-WideColumn)  |
+| Key              | Value                                                                                                                                                                                                                                                                                      |
+|:-----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Course Codes** | MIT 8107                                                                                                                                                                                                                                                           |
+| **Course Names** | MIT 8107: Advanced Database Systems (Week 10-12 of 13)                                                                                                                                                                   |
+| **Semester**     | May to August 2025                                                                                                                                                                                                                                                                         |
+| **Lecturer**     | Allan Omondi                                                                                                                                                                                                                                                                               |
+| **Contact**      | aomondi@strathmore.edu                                                                                                                                                                                                                                                                     |
+| **Note**         | The lecture contains both theory and practice.<br/>This lab forms part of the practice.<br/>It is intended for educational purposes only.<br/>Recommended citation: [BibTex](https://raw.githubusercontent.com/course-files/DistributedDatabases-HDFS-MapReduce-WideColumn/refs/heads/main/RecommendedCitation.bib) |
 
 ## Lab Manual and Instruction Files
 
-Please refer to the "Lab Manual on Hadoop Distributed File System, MapReduce, and Wide Column Data Models" for more details.
-
-Also refer to the instruction files below for more details:
+Refer to the instruction files below for more details:
 
 1. [Hadoop Setup in a Fully Distributed Mode](instructions/1-hadoop-hdfs-mapreduce/1-setup-hadoop.md)
 2. [HDFS and MapReduce using Java and Python](instructions/1-hadoop-hdfs-mapreduce/2-hdfs-mapreduce.md)

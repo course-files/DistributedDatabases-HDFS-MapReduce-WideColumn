@@ -63,10 +63,15 @@ sudo useradd -ms /bin/bash hadoop
 # Set the password for the hadoop user
 echo "hadoop:hadoop" | sudo chpasswd
 
-# Add the hadoop user to the sudo group
+# A more secure alternative:
+# sudo passwd hadoop
+
+# Append the hadoop user to the sudo group
+# without removing them from existing groups
 sudo usermod -aG sudo hadoop
 
 # Allow the hadoop user to execute any command without a password
+# i.e., passwordless administrative (sudo) privileges
 echo "hadoop ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
 ```
 
@@ -174,7 +179,7 @@ PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 PATH=$PATH:/usr/local/hadoop/bin
 HADOOP_INSTALL=$HADOOP_HOME
 
-HBASE_VERSION=2.5.11
+HBASE_VERSION=2.5.12
 HBASE_HOME=/usr/local/hbase
 
 CLASSPATH=$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/yarn/lib/*
@@ -199,7 +204,7 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin 
 export HADOOP_INSTALL=$HADOOP_HOME 
 
-export HBASE_VERSION=2.5.11
+export HBASE_VERSION=2.5.12
 export HBASE_HOME=/usr/local/hbase
 
 export CLASSPATH=$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/yarn/lib/*
@@ -279,6 +284,11 @@ sudo mkdir -p $ZOOKEEPER_HOME/data
 sudo chown -R hadoop:hadoop $ZOOKEEPER_HOME/data
 
 wget https://downloads.apache.org/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/apache-zookeeper-${ZOOKEEPER_VERSION}-bin.tar.gz -P /tmp
+
+# https://downloads.apache.org is blocked on the University WLAN
+# Below is an alternative
+wget "https://drive.usercontent.google.com/download?id=17ulaCoCIS0fHMyfmZmA38weSJRP-ctZd&export=download&confirm=t&uuid=941f79d9-8f9e-43a8-95d2-92c84c39e753" -O /tmp/apache-zookeeper-${ZOOKEEPER_VERSION}-bin.tar.gz
+
 ls -l /tmp
 sudo su
 tar -xzf /tmp/apache-zookeeper-${ZOOKEEPER_VERSION}-bin.tar.gz -C /usr/local
@@ -332,6 +342,11 @@ $ZOOKEEPER_HOME/bin/zkCli.sh -server localhost:2181
 
 ```shell
 wget https://downloads.apache.org/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz -P /tmp
+
+# https://downloads.apache.org is blocked on the University WLAN
+# Below is an alternative
+wget "https://drive.usercontent.google.com/download?id=1HRWoPg4rJ7GM6oxXS1Hh7yneXYvJmQcB&export=download&confirm=t&uuid=06a5a453-0dd2-421f-873f-4bdbaa8bc81f" -O /tmp/hadoop-${HADOOP_VERSION}.tar.gz
+
 ls -l /tmp
 sudo su
 tar -xzf /tmp/hadoop-${HADOOP_VERSION}.tar.gz -C /usr/local
@@ -344,6 +359,11 @@ rm /tmp/hadoop-${HADOOP_VERSION}.tar.gz
 ls -l $HADOOP_HOME
 
 wget https://downloads.apache.org/hbase/${HBASE_VERSION}/hbase-${HBASE_VERSION}-bin.tar.gz -P /tmp
+
+# https://downloads.apache.org is blocked on the University WLAN
+# Below is an alternative
+wget "https://drive.usercontent.google.com/download?id=1Xmo68v8CBdoeEQ4JFBdRH2RrecHFl9ya&export=download&confirm=t&uuid=271cf8f3-0420-42ef-90da-93c2999c98a7" -O /tmp/hbase-${HBASE_VERSION}-bin.tar.gz
+
 ls -l /tmp
 sudo su
 tar -xzf /tmp/hbase-${HBASE_VERSION}-bin.tar.gz -C /usr/local
